@@ -1,0 +1,183 @@
+/* ===== Global Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+/* ===== Body ===== */
+body {
+  background: linear-gradient(135deg, #eef5ff, #f8fbff);
+  color: #333;
+}
+
+/* ===== Main Container ===== */
+.container {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== Titles ===== */
+h1 {
+  text-align: center;
+  color: #1a73e8;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 30px;
+}
+
+/* ===== Dashboard Layout ===== */
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+  align-items: start;
+}
+
+/* ===== LEFT PANEL ===== */
+.left-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ===== Upload Section ===== */
+.upload-section {
+  display: flex;
+  gap: 20px;
+}
+
+.upload-box {
+  flex: 1;
+  padding: 20px;
+  border: 2px dashed #bcd7ff;
+  border-radius: 16px;
+  text-align: center;
+  background: #f9fbff;
+}
+
+.upload-box h3 {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #1a73e8;
+}
+
+/* ===== Analyze Button ===== */
+.action {
+  text-align: center;
+}
+
+.action button {
+  background: linear-gradient(135deg, #1a73e8, #4facfe);
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.action button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(26, 115, 232, 0.35);
+}
+
+/* ===== Image Below Analyze Healing (LEFT SIDE) ===== */
+
+.left-image-box {
+  margin-top: 20px;
+  width: 320px;
+  height: 260px;
+  background: #f2f5f9;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(242, 242, 242, 0.08);
+}
+
+.left-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===== RIGHT RESULTS PANEL ===== */
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ===== Result Cards ===== */
+.result-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.result-card h3 {
+  color: #1a73e8;
+  margin-bottom: 12px;
+}
+
+/* ===== Healing Status ===== */
+.status-card p {
+  font-size: 18px;
+  font-weight: bold;
+  color: #2e7d32;
+  text-align: center;
+}
+
+/* ===== Remedies ===== */
+.remedies-card ul {
+  padding-left: 20px;
+}
+
+.remedies-card li {
+  margin-bottom: 8px;
+  color: #555;
+}
+
+/* ===== Graph Section ===== */
+.graph-section {
+  margin-top: 40px;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.graph-section h3 {
+  margin-bottom: 20px;
+  color: #1a73e8;
+}
+
+/* ===== Responsive (Optional but Safe) ===== */
+@media (max-width: 900px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .upload-section {
+    flex-direction: column;
+  }
+
+  .left-image-box {
+    width: 100%;
+    height: 220px;
+  }
+}
+
+
+

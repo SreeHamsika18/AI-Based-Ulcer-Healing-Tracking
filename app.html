@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Oral Ulcer Healing Tracking System</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="bg-gray-100 dark:bg-black text-black dark:text-white transition-all duration-500">
+
+<!-- LANDSCAPE CONTAINER -->
+<div class="max-w-[1400px] min-h-[85vh] mx-auto p-8 bg-white dark:bg-gray-900 rounded-2xl shadow-xl">
+
+  <!-- TITLE -->
+  <h1 class="text-3xl font-bold text-center text-blue-600 dark:text-blue-400">
+    AI-Based Oral Ulcer Healing Tracking System
+  </h1>
+  <p class="text-center text-sm text-gray-500 dark:text-gray-400 mb-4">
+    Clinical Image Analysis & Healing Assessment
+  </p>
+
+  <!-- THEME TOGGLE -->
+  <div class="flex justify-end mb-6">
+    <button id="themeToggle"
+      class="px-4 py-2 rounded-full bg-black text-white dark:bg-white dark:text-black transition">
+      🌙 Dark Mode
+    </button>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div class="grid grid-cols-2 gap-10 items-start">
+
+    <!-- LEFT PANEL -->
+    <div class="flex flex-col gap-6">
+
+      <!-- UPLOAD -->
+      <div class="flex gap-4">
+        <div class="flex-1 border-2 border-dashed rounded-xl p-4 text-center bg-gray-50 dark:bg-gray-800">
+          <h3 class="text-blue-500 mb-2">Previous Image</h3>
+          <input type="file" id="prevImage" accept="image/*">
+        </div>
+
+        <div class="flex-1 border-2 border-dashed rounded-xl p-4 text-center bg-gray-50 dark:bg-gray-800">
+          <h3 class="text-blue-500 mb-2">Current Image</h3>
+          <input type="file" id="currImage" accept="image/*">
+        </div>
+      </div>
+
+      <!-- ANALYZE BUTTON -->
+      <div class="text-center">
+        <button onclick="analyzeUlcer()"
+          class="px-8 py-3 rounded-full bg-blue-600 hover:bg-blue-700 text-white transition">
+          Analyze Healing
+        </button>
+      </div>
+
+      <!-- IMAGE BELOW BUTTON -->
+      <div class="rounded-xl overflow-hidden shadow-lg bg-gray-200 dark:bg-gray-800">
+        <img src="assets/sample-images/dental-bg.jpg"
+             alt="Dental"
+             class="w-full h-64 object-cover">
+      </div>
+
+    </div>
+
+    <!-- RIGHT PANEL (DO NOT MOVE) -->
+    <div class="flex flex-col gap-5">
+
+      <!-- EXTRACTED PARAMETERS -->
+      <div class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow">
+        <h3 class="text-blue-500 mb-3">Extracted Parameters</h3>
+        <p>Ulcer Size: <span id="sizeResult">--</span></p>
+        <p>Color Intensity: <span id="colorResult">--</span></p>
+        <p>Border Regularity: <span id="borderResult">--</span></p>
+      </div>
+
+      <!-- HEALING STATUS -->
+      <div class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow text-center">
+        <h3 class="text-blue-500 mb-3">Healing Status</h3>
+        <p id="healingStatus" class="text-xl font-bold">--</p>
+      </div>
+
+      <!-- REMEDIES -->
+      <div class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow">
+        <h3 class="text-blue-500 mb-3">Precautions & Home Remedies</h3>
+        <ul id="remediesList" class="list-disc pl-5 text-sm">
+          <li>--</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- GRAPH -->
+  <div class="mt-10 bg-white dark:bg-gray-800 p-6 rounded-xl shadow">
+    <h3 class="text-blue-500 mb-4">Healing Progress</h3>
+    <canvas id="healingGraph" height="120"></canvas>
+  </div>
+
+</div>
+
+<!-- THEME TOGGLE SCRIPT -->
+<script>
+  const toggleBtn = document.getElementById("themeToggle");
+  const root = document.documentElement;
+
+  toggleBtn.addEventListener("click", () => {
+    root.classList.toggle("dark");
+    toggleBtn.innerHTML = root.classList.contains("dark")
+      ? "☀️ Light Mode"
+      : "🌙 Dark Mode";
+  });
+</script>
+
+<!-- PROJECT JS -->
+<script src="js/imageProcessing.js"></script>
+<script src="js/aiLogic.js"></script>
+<script src="js/visualization.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
