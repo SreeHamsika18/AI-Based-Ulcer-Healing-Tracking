@@ -188,3 +188,39 @@ Redness Change =
 
 ((Previous Redness - Current Redness) / Previous Redness) × 100
 
+
+
+\---
+
+
+
+\## Application Screenshots
+
+
+
+\### Main Dashboard
+
+
+
+The main interface allows users to upload previous and current intraoral images and start the healing analysis.
+
+
+
+!\[Main Dashboard](images/dashboard.png)
+
+
+
+\### Healing Analysis Result
+
+
+
+The analysis screen displays extracted parameters, healing status, precautions, home-care guidance, and the healing progress graph.
+
+
+
+!\[Healing Analysis Result](images/healing-result.png)
+
+
+
+\---
+
